@@ -43,7 +43,7 @@
     "sensitive_data": 5,
     "affected_scale": 3,
     "human_review_need": 5,
-    "rationale": "Bỏ sót tình trạng khẩn cấp có thể dẫn đến thương tích hoặc tử vong và khó đảo ngược. Hệ thống xử lý dữ liệu sức khỏe đặc biệt nhạy cảm; câu trả lời có vẻ thuyết phục dễ tạo over-reliance nên phạm vi pilot nhỏ vẫn cần clinical owner, escalation tức thời và đánh giá độc lập."
+    "rationale": "Bỏ sót tình trạng khẩn cấp có thể dẫn đến thương tích hoặc tử vong và khó đảo ngược, đặc biệt khi người bệnh cao tuổi hoặc ít quen công nghệ gặp rào cản digital literacy lúc tự khai triệu chứng. Hệ thống xử lý dữ liệu sức khỏe đặc biệt nhạy cảm; câu trả lời có vẻ thuyết phục dễ tạo over-reliance nên phạm vi pilot nhỏ vẫn cần clinical owner, escalation tức thời và đánh giá độc lập."
   },
   "legal_classification": {
     "vietnam": {
@@ -61,7 +61,7 @@
   },
   "product_metrics": {
     "success_kpi": "Ít nhất 85% bản intake đầy đủ được điều dưỡng xác nhận là giảm thời gian thu thập thông tin từ ba phút trở lên.",
-    "risk_kri": "Tỷ lệ under-triage đối với bộ tình huống red flag được phê duyệt phải thấp hơn 1% trong mỗi lần evaluation.",
+    "risk_kri": "Tỷ lệ under-triage đối với bộ tình huống red flag được phê duyệt phải thấp hơn 1%, tính trên tối thiểu 200 ca mỗi lần evaluation để tránh mẫu quá nhỏ gây nhiễu thống kê.",
     "guardrail_metric": "Số quyết định chẩn đoán kê đơn hoặc từ chối escalation được thực hiện hoàn toàn tự động phải luôn bằng 0.",
     "review_cadence": "Clinical safety review hàng tuần trong pilot và ngay khi có under-triage incident near miss drift hoặc thay model protocol vendor scope hay thị trường."
   },
