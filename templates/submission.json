@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "student_name": "<FILL>",
+    "student_id": "<FILL>",
+    "group_id": "<FILL>",
+    "submitted_at": "<FILL ISO-8601 DATE-TIME>"
+  },
+  "industry": "<CHOOSE FROM lab.config.json>",
+  "product_context": {
+    "product_name": "<FILL>",
+    "product_stage": "<CHOOSE>",
+    "problem_statement": "<FILL>",
+    "target_users": ["<FILL>"],
+    "value_hypothesis": "<FILL>",
+    "in_scope": ["<FILL>"],
+    "non_goals": ["<FILL>"],
+    "user_journey_moment": "<FILL>",
+    "target_launch_or_review_date": "<YYYY-MM-DD>",
+    "automation_level": "<CHOOSE>",
+    "fallback_experience": "<FILL: what happens when AI is unavailable or unsafe>",
+    "decision_reversibility": "<CHOOSE>"
+  },
+  "system_profile": {
+    "purpose": "<FILL>",
+    "user_groups": ["<FILL>"],
+    "decision_impact": "<FILL>",
+    "data_types": ["<FILL>"],
+    "deployment_context": "<FILL>",
+    "target_markets": ["<FILL>"],
+    "system_boundary": {
+      "model": "<FILL>",
+      "application": "<FILL>",
+      "people": ["<FILL>"],
+      "vendors": ["<FILL OR none>"],
+      "upstream_inputs": ["<FILL>"],
+      "downstream_decisions": ["<FILL>"]
+    }
+  },
+  "industry_risk_snapshot": {
+    "harm_severity": 0,
+    "high_stakes": 0,
+    "sensitive_data": 0,
+    "affected_scale": 0,
+    "human_review_need": 0,
+    "rationale": "<Explain the 1-5 ratings with evidence. This score is not a legal classification.>"
+  },
+  "legal_classification": {
+    "vietnam": {
+      "status": "uncertain-requires-legal-review",
+      "rationale": "<FILL>",
+      "source_ids": ["SRC-01"]
+    },
+    "eu": {
+      "status": "uncertain-requires-legal-review",
+      "rationale": "<FILL>",
+      "source_ids": ["SRC-02"]
+    },
+    "other_markets": "<FILL OR not assessed>",
+    "legal_review_required": true
+  },
+  "product_metrics": {
+    "success_kpi": "<PRODUCT OUTCOME + TARGET>",
+    "risk_kri": "<RISK INDICATOR + TARGET>",
+    "guardrail_metric": "<HARD LIMIT + TARGET>",
+    "review_cadence": "<CADENCE + EVENT TRIGGERS>"
+  },
+  "release_decision": {
+    "accountable_product_owner": "<ROLE, NOT PERSON>",
+    "risk_acceptance_owner": "<ROLE WITH AUTHORITY>",
+    "independent_reviewer": "<ROLE, NOT PERSON>",
+    "decision": "research-only",
+    "release_blockers": ["GAP-01: <FILL OR use none when no blocker>"],
+    "release_conditions": ["<FILL>"],
+    "next_review_trigger": "<DATE, METRIC, INCIDENT OR SCOPE CHANGE>",
+    "residual_risk_rationale": "<FILL>"
+  }
+}

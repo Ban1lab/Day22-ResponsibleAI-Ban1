@@ -1,0 +1,2 @@
+group_id,industries_compared,highest_stakes_industry,recurring_harms,common_failure_layers,human_in_loop_decisions,strongest_guardrails,cross_industry_pattern,evidence_source_ids
+GROUP-DEMO,hr-recruitment,hr-recruitment,discrimination;opportunity loss,data;governance-process,Every rejection and near-threshold decision requires meaningful review and appeal,No auto-reject subgroup evaluation release gate logging and stop threshold,Model performance alone cannot prevent harm when rules data workflow and accountability are weak,SRC-01;SRC-02;SRC-03

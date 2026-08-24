@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/VinUni-AI20k/Day22-Responsible-AI-Production-Lab/main/schemas/submission.schema.json",
+  "title": "Responsible AI Lab Submission",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "metadata",
+    "industry",
+    "product_context",
+    "system_profile",
+    "industry_risk_snapshot",
+    "legal_classification",
+    "product_metrics",
+    "release_decision"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "metadata": {
+      "type": "object",
+      "required": ["student_name", "student_id", "group_id", "submitted_at"],
+      "properties": {
+        "student_name": { "type": "string", "minLength": 2 },
+        "student_id": { "type": "string", "minLength": 2 },
+        "group_id": { "type": "string", "minLength": 1 },
+        "submitted_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "industry": {
+      "enum": [
+        "hr-recruitment",
+        "education-ai-tutor",
+        "healthcare-assistant",
+        "mobility-autonomous-driving",
+        "media-news-social-political-assistant",
+        "content-creator"
+      ]
+    },
+    "product_context": {
+      "type": "object",
+      "required": [
+        "product_name",
+        "product_stage",
+        "problem_statement",
+        "target_users",
+        "value_hypothesis",
+        "in_scope",
+        "non_goals",
+        "user_journey_moment",
+        "target_launch_or_review_date",
+        "automation_level",
+        "fallback_experience",
+        "decision_reversibility"
+      ],
+      "properties": {
+        "product_name": { "type": "string", "minLength": 2 },
+        "product_stage": { "enum": ["discovery", "pilot", "limited-production", "production"] },
+        "problem_statement": { "type": "string", "minLength": 20 },
+        "target_users": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "value_hypothesis": { "type": "string", "minLength": 20 },
+        "in_scope": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "non_goals": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "user_journey_moment": { "type": "string", "minLength": 10 },
+        "target_launch_or_review_date": { "type": "string", "format": "date" },
+        "automation_level": { "enum": ["decision-support", "recommendation", "semi-automated", "fully-automated"] },
+        "fallback_experience": { "type": "string", "minLength": 20 },
+        "decision_reversibility": { "enum": ["reversible", "partially-reversible", "hard-to-reverse"] }
+      },
+      "additionalProperties": false
+    },
+    "system_profile": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "user_groups",
+        "decision_impact",
+        "data_types",
+        "deployment_context",
+        "target_markets",
+        "system_boundary"
+      ],
+      "properties": {
+        "purpose": { "type": "string", "minLength": 20 },
+        "user_groups": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "decision_impact": { "type": "string", "minLength": 20 },
+        "data_types": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "deployment_context": { "type": "string", "minLength": 20 },
+        "target_markets": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "system_boundary": {
+          "type": "object",
+          "required": ["model", "application", "people", "vendors", "upstream_inputs", "downstream_decisions"],
+          "properties": {
+            "model": { "type": "string", "minLength": 2 },
+            "application": { "type": "string", "minLength": 2 },
+            "people": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "vendors": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "upstream_inputs": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "downstream_decisions": { "$ref": "#/$defs/nonEmptyStringArray" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "industry_risk_snapshot": {
+      "type": "object",
+      "required": ["harm_severity", "high_stakes", "sensitive_data", "affected_scale", "human_review_need", "rationale"],
+      "properties": {
+        "harm_severity": { "$ref": "#/$defs/score" },
+        "high_stakes": { "$ref": "#/$defs/score" },
+        "sensitive_data": { "$ref": "#/$defs/score" },
+        "affected_scale": { "$ref": "#/$defs/score" },
+        "human_review_need": { "$ref": "#/$defs/score" },
+        "rationale": { "type": "string", "minLength": 80 }
+      },
+      "additionalProperties": false
+    },
+    "legal_classification": {
+      "type": "object",
+      "required": ["vietnam", "eu", "other_markets", "legal_review_required"],
+      "properties": {
+        "vietnam": { "$ref": "#/$defs/legalAssessment" },
+        "eu": { "$ref": "#/$defs/legalAssessment" },
+        "other_markets": { "type": "string", "minLength": 10 },
+        "legal_review_required": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "product_metrics": {
+      "type": "object",
+      "required": ["success_kpi", "risk_kri", "guardrail_metric", "review_cadence"],
+      "properties": {
+        "success_kpi": { "type": "string", "minLength": 20 },
+        "risk_kri": { "type": "string", "minLength": 20 },
+        "guardrail_metric": { "type": "string", "minLength": 20 },
+        "review_cadence": { "type": "string", "minLength": 10 }
+      },
+      "additionalProperties": false
+    },
+    "release_decision": {
+      "type": "object",
+      "required": [
+        "accountable_product_owner",
+        "risk_acceptance_owner",
+        "independent_reviewer",
+        "decision",
+        "release_blockers",
+        "release_conditions",
+        "next_review_trigger",
+        "residual_risk_rationale"
+      ],
+      "properties": {
+        "accountable_product_owner": { "type": "string", "minLength": 2 },
+        "risk_acceptance_owner": { "type": "string", "minLength": 2 },
+        "independent_reviewer": { "type": "string", "minLength": 2 },
+        "decision": { "enum": ["go", "conditional-go", "no-go", "research-only"] },
+        "release_blockers": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "release_conditions": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "next_review_trigger": { "type": "string", "minLength": 20 },
+        "residual_risk_rationale": { "type": "string", "minLength": 40 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "score": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "legalAssessment": {
+      "type": "object",
+      "required": ["status", "rationale", "source_ids"],
+      "properties": {
+        "status": {
+          "enum": [
+            "prohibited",
+            "high-risk",
+            "medium-risk",
+            "limited-transparency",
+            "low-risk",
+            "not-applicable",
+            "uncertain-requires-legal-review"
+          ]
+        },
+        "rationale": { "type": "string", "minLength": 40 },
+        "source_ids": { "$ref": "#/$defs/nonEmptyStringArray" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,2 @@
+gap_id,jurisdiction,product_risk_or_requirement,current_state,product_requirement,acceptance_criteria,priority,release_blocking,owner,target_milestone,deadline_or_trigger,status,evidence_needed,source_ids
+GAP-01,<VN EU or other>,<FILL>,<FILL>,<FILL>,<GIVEN WHEN THEN>,must,yes,<PRODUCT OR CONTROL OWNER>,<MILESTONE>,<DATE OR RELEASE GATE>,not-started,<FILL>,SRC-01

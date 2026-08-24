@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "source_snapshot_date": "2026-08-24",
+  "industries": [
+    "hr-recruitment",
+    "education-ai-tutor",
+    "healthcare-assistant",
+    "mobility-autonomous-driving",
+    "media-news-social-political-assistant",
+    "content-creator"
+  ],
+  "product_stages": [
+    "discovery",
+    "pilot",
+    "limited-production",
+    "production"
+  ],
+  "automation_levels": [
+    "decision-support",
+    "recommendation",
+    "semi-automated",
+    "fully-automated"
+  ],
+  "decision_reversibility_levels": [
+    "reversible",
+    "partially-reversible",
+    "hard-to-reverse"
+  ],
+  "backlog_priorities": [
+    "must",
+    "should",
+    "could",
+    "wont-this-release"
+  ],
+  "release_blocking_values": [
+    "yes",
+    "no"
+  ],
+  "risk_metrics": [
+    "harm_severity",
+    "high_stakes",
+    "sensitive_data",
+    "affected_scale",
+    "human_review_need"
+  ],
+  "score_min": 1,
+  "score_max": 5,
+  "case_count_min": 2,
+  "case_count_max": 3,
+  "failure_modes": [
+    "hallucination",
+    "bias-fairness",
+    "sycophancy",
+    "over-reliance",
+    "harmful-advice",
+    "privacy-leak",
+    "escalation-failure",
+    "misuse-jailbreak",
+    "security-injection",
+    "system-failure",
+    "other"
+  ],
+  "failure_layers": [
+    "user-experience",
+    "system-message-grounding",
+    "safety-system",
+    "model",
+    "data",
+    "integration-tooling",
+    "governance-process"
+  ],
+  "harm_lenses": [
+    "misinformation-opportunity-loss",
+    "injury",
+    "privacy-loss",
+    "dignity-loss",
+    "autonomy-manipulation",
+    "financial-loss",
+    "discrimination",
+    "security-abuse",
+    "environmental-impact",
+    "other"
+  ],
+  "stakeholder_types": [
+    "user-customer",
+    "affected-non-customer",
+    "operator",
+    "worker",
+    "organization",
+    "public-society"
+  ],
+  "legal_classification_statuses": [
+    "prohibited",
+    "high-risk",
+    "medium-risk",
+    "limited-transparency",
+    "low-risk",
+    "not-applicable",
+    "uncertain-requires-legal-review"
+  ],
+  "source_authority_levels": [
+    "primary-official",
+    "primary-peer-reviewed",
+    "first-party",
+    "secondary-reputable",
+    "other"
+  ],
+  "action_statuses": [
+    "not-started",
+    "planned",
+    "in-progress",
+    "blocked",
+    "done",
+    "not-applicable"
+  ]
+}

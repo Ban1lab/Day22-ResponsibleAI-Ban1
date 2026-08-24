@@ -1,0 +1,3 @@
+case_id,high_risk_moment,stakeholder,stakeholder_type,failure_mode,failure_layer,harm_lens,harm_description,severity_1_5,likelihood_1_5,scale_1_5,frequency_1_5,evidence_source_ids,existing_controls,proposed_controls,human_oversight,residual_severity_1_5,residual_likelihood_1_5,owner,monitoring_metric,trigger_threshold,response_action
+CASE-01,<FILL>,<FILL>,affected-non-customer,<CHOOSE>,<CHOOSE>,<CHOOSE>,<FILL>,0,0,0,0,SRC-01,<FILL OR none>,<FILL>,<FILL>,0,0,<ROLE>,<FILL>,<FILL>,<FILL>
+CASE-02,<FILL>,<FILL>,user-customer,<CHOOSE>,<CHOOSE>,<CHOOSE>,<FILL>,0,0,0,0,SRC-02,<FILL OR none>,<FILL>,<FILL>,0,0,<ROLE>,<FILL>,<FILL>,<FILL>

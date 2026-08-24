@@ -1,0 +1,3 @@
+case_id,title,year,industry,system_purpose,decision_impact,affected_groups,verified_facts,reported_harm,quantitative_evidence,source_ids,limitations
+CASE-01,<FILL>,0,<MATCH submission.json>,<FILL>,<FILL>,<semicolon separated>,<FILL>,<FILL>,<FILL>,SRC-01,<FILL>
+CASE-02,<FILL>,0,<MATCH submission.json>,<FILL>,<FILL>,<semicolon separated>,<FILL>,<FILL>,<FILL>,SRC-02,<FILL>
