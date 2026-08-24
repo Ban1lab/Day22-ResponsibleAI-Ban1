@@ -26,7 +26,7 @@
     "user_groups": ["người bệnh trưởng thành", "điều dưỡng", "bác sĩ"],
     "decision_impact": "Đầu ra có thể ảnh hưởng thời điểm người bệnh được đánh giá nên sai sót hoặc over-reliance có thể trì hoãn chăm sóc khẩn cấp.",
     "data_types": ["triệu chứng và tiền sử tự khai", "thuốc đang sử dụng", "dữ liệu liên hệ", "ghi chú tiếp nhận"],
-    "deployment_context": "Cổng web của phòng khám tại Việt Nam cung cấp intake trước cuộc hẹn và bảng điều khiển riêng cho nhân viên lâm sàng.",
+    "deployment_context": "Cổng web của phòng khám tại Việt Nam cung cấp intake trước cuộc hẹn và bảng điều khiển riêng cho nhân viên lâm sàng. Người bệnh phải xác nhận consent trước khi trả lời triệu chứng, có thể rút consent bất kỳ lúc nào và dữ liệu intake chỉ được lưu trữ tối đa 12 tháng phục vụ hồ sơ khám và audit an toàn.",
     "target_markets": ["Vietnam", "European Union in a later phase"],
     "system_boundary": {
       "model": "mô hình ngôn ngữ có grounding vào protocol tiếp nhận được phê duyệt",
