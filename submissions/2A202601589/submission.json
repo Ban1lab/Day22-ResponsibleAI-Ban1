@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "student_name": "La Thị Thanh Tuyết",
+    "student_id": "2A202601589",
+    "group_id": "GROUP-KHIEM-TUYET",
+    "submitted_at": "2026-08-24T15:30:00+07:00"
+  },
+  "industry": "healthcare-assistant",
+  "product_context": {
+    "product_name": "CareGuide VN",
+    "product_stage": "pilot",
+    "problem_statement": "Nhân viên phòng khám mất thời gian thu thập triệu chứng ban đầu và người bệnh có thể không nhận ra dấu hiệu cần được đánh giá khẩn cấp.",
+    "target_users": ["người bệnh trưởng thành", "điều dưỡng tiếp nhận", "bác sĩ phòng khám"],
+    "value_hypothesis": "Trợ lý thu thập triệu chứng có cấu trúc sẽ giảm thời gian tiếp nhận và giúp nhân viên y tế nhận diện hồ sơ cần xem sớm mà không thay thế chẩn đoán chuyên môn.",
+    "in_scope": ["thu thập triệu chứng do người bệnh tự khai", "tóm tắt cho nhân viên y tế", "phát hiện red flag để ưu tiên human review"],
+    "non_goals": ["chẩn đoán bệnh", "kê đơn hoặc thay đổi thuốc", "tự động quyết định cấp cứu", "phục vụ trẻ em trong pilot"],
+    "user_journey_moment": "Sau khi người bệnh yêu cầu lịch khám và trước khi điều dưỡng thực hiện đánh giá tiếp nhận",
+    "target_launch_or_review_date": "2026-10-15",
+    "automation_level": "decision-support",
+    "fallback_experience": "Khi AI không chắc chắn bị lỗi hoặc bị tạm dừng, biểu mẫu chuẩn được chuyển nguyên trạng cho điều dưỡng và người bệnh thấy hướng dẫn liên hệ cấp cứu khi có red flag.",
+    "decision_reversibility": "hard-to-reverse"
+  },
+  "system_profile": {
+    "purpose": "Thu thập và tóm tắt triệu chứng để hỗ trợ điều dưỡng ưu tiên đánh giá ban đầu tại phòng khám ngoại trú.",
+    "user_groups": ["người bệnh trưởng thành", "điều dưỡng", "bác sĩ"],
+    "decision_impact": "Đầu ra có thể ảnh hưởng thời điểm người bệnh được đánh giá nên sai sót hoặc over-reliance có thể trì hoãn chăm sóc khẩn cấp.",
+    "data_types": ["triệu chứng và tiền sử tự khai", "thuốc đang sử dụng", "dữ liệu liên hệ", "ghi chú tiếp nhận"],
+    "deployment_context": "Cổng web của phòng khám tại Việt Nam cung cấp intake trước cuộc hẹn và bảng điều khiển riêng cho nhân viên lâm sàng.",
+    "target_markets": ["Vietnam", "European Union in a later phase"],
+    "system_boundary": {
+      "model": "mô hình ngôn ngữ có grounding vào protocol tiếp nhận được phê duyệt",
+      "application": "biểu mẫu hội thoại cho người bệnh và clinical review queue",
+      "people": ["người bệnh", "người chăm sóc", "điều dưỡng", "bác sĩ", "nhân viên an toàn lâm sàng"],
+      "vendors": ["nhà cung cấp mô hình", "nhà cung cấp nền tảng hồ sơ sức khỏe"],
+      "upstream_inputs": ["thông tin người bệnh tự khai", "protocol red flag", "danh mục thuốc", "lịch phòng khám"],
+      "downstream_decisions": ["gửi cảnh báo cấp cứu", "ưu tiên điều dưỡng review", "đặt lịch thông thường", "yêu cầu bổ sung dữ liệu"]
+    }
+  },
+  "industry_risk_snapshot": {
+    "harm_severity": 5,
+    "high_stakes": 5,
+    "sensitive_data": 5,
+    "affected_scale": 3,
+    "human_review_need": 5,
+    "rationale": "Bỏ sót tình trạng khẩn cấp có thể dẫn đến thương tích hoặc tử vong và khó đảo ngược. Hệ thống xử lý dữ liệu sức khỏe đặc biệt nhạy cảm; câu trả lời có vẻ thuyết phục dễ tạo over-reliance nên phạm vi pilot nhỏ vẫn cần clinical owner, escalation tức thời và đánh giá độc lập."
+  },
+  "legal_classification": {
+    "vietnam": {
+      "status": "uncertain-requires-legal-review",
+      "rationale": "Mục đích dự kiến, dữ liệu sức khỏe, mức ảnh hưởng quyết định và ranh giới với phần mềm thiết bị y tế phải được đối chiếu văn bản hiện hành bằng legal memo trước pilot.",
+      "source_ids": ["SRC-06", "SRC-07"]
+    },
+    "eu": {
+      "status": "uncertain-requires-legal-review",
+      "rationale": "Phân loại phụ thuộc intended purpose và việc hệ thống có trở thành medical-device software hay không; mốc và nghĩa vụ áp dụng phải được chuyên gia xác nhận.",
+      "source_ids": ["SRC-08"]
+    },
+    "other_markets": "Hoa Kỳ chưa nằm trong pilot; FDA guidance chỉ được dùng làm tham chiếu và cần phân tích riêng nếu mở rộng.",
+    "legal_review_required": true
+  },
+  "product_metrics": {
+    "success_kpi": "Ít nhất 85% bản intake đầy đủ được điều dưỡng xác nhận là giảm thời gian thu thập thông tin từ ba phút trở lên.",
+    "risk_kri": "Tỷ lệ under-triage đối với bộ tình huống red flag được phê duyệt phải thấp hơn 1% trong mỗi lần evaluation.",
+    "guardrail_metric": "Số quyết định chẩn đoán kê đơn hoặc từ chối escalation được thực hiện hoàn toàn tự động phải luôn bằng 0.",
+    "review_cadence": "Clinical safety review hàng tuần trong pilot và ngay khi có under-triage incident near miss drift hoặc thay model protocol vendor scope hay thị trường."
+  },
+  "release_decision": {
+    "accountable_product_owner": "Digital Health Product Owner",
+    "risk_acceptance_owner": "Medical Director",
+    "independent_reviewer": "Clinical Safety and Legal Review Board",
+    "decision": "research-only",
+    "release_blockers": ["GAP-01: chưa có legal privacy và medical-device classification memo", "GAP-02: chưa đạt independent red-flag safety evaluation", "GAP-03: chưa hoàn tất clinical escalation và downtime drill"],
+    "release_conditions": ["chỉ dùng dữ liệu tổng hợp cho đến khi mọi blocker done", "không cung cấp chẩn đoán hoặc kê đơn", "pilot thực tế cần Medical Director ký duyệt"],
+    "next_review_trigger": "Review ngày 2026-10-15 hoặc ngay khi evaluation phát hiện under-triage privacy incident hay thay đổi model protocol vendor scope hoặc market.",
+    "residual_risk_rationale": "Evidence cho thấy clinical AI có thể bỏ sót sepsis hoặc đưa triage không an toàn; vì vậy hiện chỉ được research bằng dữ liệu tổng hợp cho đến khi safety legal privacy và escalation gates đạt."
+  }
+}
