@@ -71,7 +71,7 @@
     "independent_reviewer": "Clinical Safety and Legal Review Board",
     "decision": "research-only",
     "release_blockers": ["GAP-01: chưa có legal privacy và medical-device classification memo", "GAP-02: chưa đạt independent red-flag safety evaluation", "GAP-03: chưa hoàn tất clinical escalation và downtime drill"],
-    "release_conditions": ["chỉ dùng dữ liệu tổng hợp cho đến khi mọi blocker done", "không cung cấp chẩn đoán hoặc kê đơn", "pilot thực tế cần Medical Director ký duyệt"],
+    "release_conditions": ["chỉ dùng dữ liệu tổng hợp cho đến khi mọi blocker done", "không cung cấp chẩn đoán hoặc kê đơn", "pilot thực tế cần Medical Director ký duyệt", "cung cấp kênh intake thay thế qua điện thoại cho người bệnh khó dùng công nghệ trước khi pilot thực tế"],
     "next_review_trigger": "Review ngày 2026-10-15 hoặc ngay khi evaluation phát hiện under-triage privacy incident hay thay đổi model protocol vendor scope hoặc market.",
     "residual_risk_rationale": "Evidence cho thấy clinical AI có thể bỏ sót sepsis hoặc đưa triage không an toàn; vì vậy hiện chỉ được research bằng dữ liệu tổng hợp cho đến khi safety legal privacy và escalation gates đạt."
   }
